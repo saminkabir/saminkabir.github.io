@@ -1,33 +1,219 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Your Name</title>
-    <style>
-      body { font-family: system-ui, Arial; max-width: 720px; margin: 60px auto; padding: 0 16px; }
-      h1 { margin-bottom: 6px; }
-      .muted { color: #666; }
-      a { text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      ul { padding-left: 18px; }
-    </style>
-  </head>
-  <body>
-    <h1>Your Name</h1>
-    <p class="muted">Short tagline. What you do.</p>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Your Name</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <h2>Projects</h2>
-    <ul>
-      <li><a href="https://github.com/your-username/your-repo">Project 1</a></li>
-      <li><a href="https://github.com/your-username/your-repo2">Project 2</a></li>
-    </ul>
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <h2>Contact</h2>
-    <p>
-      <a href="mailto:you@example.com">you@example.com</a> ·
-      <a href="https://github.com/your-username">GitHub</a> ·
-      <a href="https://www.linkedin.com/in/your-handle/">LinkedIn</a>
-    </p>
-  </body>
+  <style>
+    :root {
+      --text: #222;
+      --muted: #666;
+      --accent: #1a73e8;
+      --border: #e5e5e5;
+      --bg: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    /* ---------- Top Navbar ---------- */
+    .navbar {
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar .name {
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    .navbar nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    .navbar nav a:hover {
+      color: var(--accent);
+    }
+
+    /* ---------- Layout ---------- */
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 40px;
+    }
+
+    /* ---------- Sidebar ---------- */
+    .sidebar {
+      text-align: center;
+    }
+
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+    }
+
+    .sidebar h2 {
+      margin: 8px 0 4px;
+      font-size: 20px;
+    }
+
+    .sidebar .role {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .info {
+      text-align: left;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+
+    .info div {
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    .info i {
+      width: 18px;
+      margin-right: 6px;
+      color: var(--accent);
+    }
+
+    .info a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .info a:hover {
+      text-decoration: underline;
+      color: var(--accent);
+    }
+
+    /* ---------- Main Content ---------- */
+    main h1 {
+      margin-top: 0;
+      font-size: 28px;
+    }
+
+    main p {
+      margin-bottom: 16px;
+      color: #333;
+    }
+
+    main strong {
+      font-weight: 600;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        text-align: center;
+      }
+      .info {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="name">yourusername</div>
+    <nav>
+      <a href="#publications">Publications</a>
+      <a href="#teaching">Teaching</a>
+      <a href="cv.pdf">CV</a>
+      <a href="resume.pdf">Resume</a>
+      <a href="#mentorships">Mentorships</a>
+    </nav>
+  </header>
+
+  <!-- Main Layout -->
+  <div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <img src="profile.jpg" alt="Profile photo" class="profile-pic">
+
+      <h2>Your Name</h2>
+      <div class="role">
+        PhD Student | Researcher | Computer Science
+      </div>
+
+      <div class="info">
+        <div><i class="fa-solid fa-location-dot"></i> City, State, Country</div>
+        <div><i class="fa-solid fa-building-columns"></i> Your University</div>
+        <div><i class="fa-solid fa-envelope"></i>
+          <a href="mailto:you@email.com">Email</a>
+        </div>
+        <div><i class="fa-brands fa-google-scholar"></i>
+          <a href="#">Google Scholar</a>
+        </div>
+        <div><i class="fa-brands fa-github"></i>
+          <a href="#">GitHub</a>
+        </div>
+        <div><i class="fa-brands fa-linkedin"></i>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Content -->
+    <main>
+      <h1>About Me</h1>
+
+      <p>
+        I am currently pursuing a PhD in Computer Science at <strong>Your University</strong>,
+        where I work under the supervision of <strong>Advisor Name</strong>.
+        My research focuses on <strong>your research areas</strong>.
+      </p>
+
+      <p>
+        I am particularly interested in <strong>key research themes</strong>, and
+        my work spans both theoretical and applied aspects of computer science.
+      </p>
+
+      <p>
+        Prior to my PhD, I earned my undergraduate degree from <strong>Your Previous University</strong>
+        and gained industry experience as a software engineer.
+      </p>
+
+      <p>
+        <strong>I am actively seeking opportunities</strong> for research collaborations,
+        internships, or academic positions. Please feel free to reach out.
+      </p>
+    </main>
+
+  </div>
+
+</body>
 </html>
