@@ -32,23 +32,16 @@
       border-bottom: 1px solid var(--border);
       padding: 12px 24px;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      justify-content: flex-end;
     }
 
-    .navbar .name {
-      font-weight: 600;
-      font-size: 18px;
-    }
-
-    .navbar nav a {
-      margin-left: 20px;
+    .navbar a {
       text-decoration: none;
       color: var(--text);
       font-size: 15px;
     }
 
-    .navbar nav a:hover {
+    .navbar a:hover {
       color: var(--accent);
     }
 
@@ -121,11 +114,6 @@
 
     main p {
       margin-bottom: 16px;
-      color: #333;
-    }
-
-    main strong {
-      font-weight: 600;
     }
 
     /* ---------- Sections ---------- */
@@ -141,31 +129,36 @@
       gap: 10px;
     }
 
-    /* ---------- Education ---------- */
-    .education-item {
+    /* ---------- Shared Item Style ---------- */
+    .item {
       display: grid;
       grid-template-columns: 60px 1fr;
       gap: 16px;
       margin-bottom: 24px;
     }
 
-    .edu-logo {
+    .item-logo {
       width: 56px;
       height: 56px;
       object-fit: contain;
     }
 
-    .edu-content {
+    .item-content {
       display: flex;
       justify-content: space-between;
       gap: 20px;
     }
 
-    .edu-text strong {
+    .item-text strong {
       display: block;
     }
 
-    .edu-date {
+    .item-sub {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .item-date {
       color: var(--muted);
       font-size: 14px;
       white-space: nowrap;
@@ -176,16 +169,13 @@
       .container {
         grid-template-columns: 1fr;
       }
-      .sidebar {
-        text-align: center;
-      }
       .info {
         text-align: center;
       }
-      .edu-content {
+      .item-content {
         flex-direction: column;
       }
-      .edu-date {
+      .item-date {
         margin-top: 4px;
       }
     }
@@ -196,13 +186,10 @@
 
   <!-- Navbar -->
   <header class="navbar">
-    <div class="name"></div>
-    <nav>
-      <a href="cv.pdf">CV</a>
-    </nav>
+    <a href="cv.pdf">CV</a>
   </header>
 
-  <!-- Main Layout -->
+  <!-- Layout -->
   <div class="container">
 
     <!-- Sidebar -->
@@ -210,9 +197,7 @@
       <img src="profile.jpeg" alt="Profile photo" class="profile-pic">
 
       <h2>Ahmed Samin Yeaser Kabir</h2>
-      <div class="role">
-        PhD Student | Researcher | Computer Science
-      </div>
+      <div class="role">PhD Student | Researcher | Computer Science</div>
 
       <div class="info">
         <div><i class="fa-solid fa-location-dot"></i> Columbus, Ohio, USA</div>
@@ -229,61 +214,71 @@
       </div>
     </aside>
 
-    <!-- Content -->
+    <!-- Main Content -->
     <main>
       <h1>About Me</h1>
 
       <p>
-        I am currently pursuing a PhD in Computer Science at <strong>The Ohio State University</strong>,
-        where I work under the supervision of
+        I am currently pursuing a PhD in Computer Science at
+        <strong>The Ohio State University</strong>, advised by
         <a href="https://www.paparrizos.org/">Prof. John Paparrizos</a>.
         My research focuses on <strong>Data Management and Data Mining</strong>.
       </p>
 
       <p>
-        I am particularly interested in <strong>Similarity Search and Vector Databases</strong>,
-        and my work spans both theoretical and applied aspects of computer science.
+        I am currently working on
+        <strong>Similarity Search and Vector Databases</strong>.
       </p>
-
-      <p>
-        Prior to my PhD, I earned my undergraduate degree from
-        <strong>University of Dhaka</strong> and gained industry experience as a software engineer.
-      </p>
-
       <p>
         <strong>I am actively seeking opportunities</strong> for research collaborations,
         internships, or academic positions. Please feel free to reach out.
       </p>
 
-      <!-- Education Section -->
+      <!-- Education -->
       <div class="section">
         <h2>✏️ Education</h2>
 
-        <div class="education-item">
-          <img src="osu.png" alt="OSU logo" class="edu-logo">
-          <div class="edu-content">
-            <div class="edu-text">
+        <div class="item">
+          <img src="osu.png" class="item-logo" alt="OSU logo">
+          <div class="item-content">
+            <div class="item-text">
               <strong>PhD Student in Computer Science and Engineering</strong>
-              The Ohio State University (OSU), USA
+              <div class="item-sub">The Ohio State University (OSU), USA</div>
             </div>
-            <div class="edu-date">Aug 2023 – Present</div>
+            <div class="item-date">Aug 2023 – Present</div>
           </div>
         </div>
 
-        <div class="education-item">
-          <img src="du.jpeg" alt="University of Dhaka logo" class="edu-logo">
-          <div class="edu-content">
-            <div class="edu-text">
+        <div class="item">
+          <img src="du.jpeg" class="item-logo" alt="DU logo">
+          <div class="item-content">
+            <div class="item-text">
               <strong>B.Sc. in Computer Science and Engineering</strong>
-              University of Dhaka, Bangladesh
+              <div class="item-sub">University of Dhaka, Bangladesh</div>
             </div>
-            <div class="edu-date">Jan 2016 – Dec 2019</div>
+            <div class="item-date">Sept 2018 – Jun 2022</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work Experience -->
+      <div class="section">
+        <h2>💼 Work Experience</h2>
+
+        <div class="item">
+          <img src="tigerit_bangladesh_limited_logo.jpeg" class="item-logo" alt="TigerIT logo">
+          <div class="item-content">
+            <div class="item-text">
+              <strong>Software Engineer</strong>
+              <div class="item-sub">TigerIT Bangladesh Ltd. · Full-time</div>
+            </div>
+            <div class="item-date">Jan 2016 – Dec 2019</div>
           </div>
         </div>
 
       </div>
-    </main>
 
+    </main>
   </div>
 
 </body>
